@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="ApexConfigTool.Views.ShadowsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <StackPanel Margin="34">
+
+            <TextBlock Text="Shadows"
+                       Style="{StaticResource PageTitleStyle}"
+                       Margin="0,0,0,28"/>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,0,0,16">
+
+                <CheckBox x:Name="DisableAllShadowsCheck"
+                          Content="Disable all shadows"
+                          FontSize="15"
+                          FontWeight="SemiBold"/>
+
+            </Border>
+
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Border Grid.Column="0"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Shadow rendering"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+
+                        <TextBlock Text="Shadows"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="ShadowEnableCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="Dynamic shadows"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="DynamicShadowCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="Cascade shadows"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="CsmEnabledCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="New shadow system"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="NewShadowSettingsCombo">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                </Border>
+
+
+                <Border Grid.Column="2"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Cascade quality"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+
+                        <TextBlock Text="Coverage"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="CsmCoverageCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="0" Tag="0"/>
+                            <ComboBoxItem Content="1" Tag="1"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="Cascade resolution"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="CsmResolutionCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="0" Tag="0"/>
+                            <ComboBoxItem Content="512" Tag="512"/>
+                            <ComboBoxItem Content="1024" Tag="1024"/>
+                            <ComboBoxItem Content="2048" Tag="2048"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="Shadow depth"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="ShadowDepthCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="0" Tag="0"/>
+                            <ComboBoxItem Content="256" Tag="256"/>
+                            <ComboBoxItem Content="512" Tag="512"/>
+                            <ComboBoxItem Content="1024" Tag="1024"/>
+
+                        </ComboBox>
+
+
+                        <TextBlock Text="Upres factor"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="ShadowUpresCombo">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="0" Tag="0"/>
+                            <ComboBoxItem Content="1" Tag="1"/>
+                            <ComboBoxItem Content="2" Tag="2"/>
+                            <ComboBoxItem Content="3" Tag="3"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

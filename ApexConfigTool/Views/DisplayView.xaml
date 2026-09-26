@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="ApexConfigTool.Views.DisplayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <StackPanel Margin="34">
+
+            <TextBlock Text="Display"
+                       Style="{StaticResource PageTitleStyle}"
+                       Margin="0,0,0,28"/>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,0,0,16">
+
+                <StackPanel>
+
+                    <TextBlock Text="Resolution"
+                               Style="{StaticResource SectionTitleStyle}"
+                               Margin="0,0,0,15"/>
+
+
+                    <ComboBox x:Name="ResolutionCombo"
+                              SelectionChanged="ResolutionCombo_SelectionChanged">
+
+                        <ComboBoxItem Content="1920 × 1080 · 16:9"/>
+                        <ComboBoxItem Content="1728 × 1080 · 16:10"/>
+                        <ComboBoxItem Content="1440 × 1080 · 4:3"/>
+                        <ComboBoxItem Content="1280 × 1024 · 5:4"/>
+                        <ComboBoxItem Content="1280 × 960 · 4:3"/>
+                        <ComboBoxItem Content="1080 × 1080 · 1:1"/>
+                        <ComboBoxItem Content="Custom resolution"/>
+
+                    </ComboBox>
+
+
+                    <StackPanel x:Name="CustomResolutionPanel"
+                                Visibility="Collapsed"
+                                Orientation="Horizontal"
+                                Margin="0,14,0,0">
+
+                        <TextBox x:Name="CustomWidthBox"
+                                 Width="125"
+                                 Height="38"
+                                 Text="1280"/>
+
+                        <TextBlock Text="×"
+                                   FontSize="18"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   VerticalAlignment="Center"
+                                   Margin="12,0"/>
+
+                        <TextBox x:Name="CustomHeightBox"
+                                 Width="125"
+                                 Height="38"
+                                 Text="960"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <Border Style="{StaticResource CardStyle}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Options"
+                               Style="{StaticResource SectionTitleStyle}"
+                               Margin="0,0,0,10"/>
+
+                    <CheckBox x:Name="FullscreenCheck"
+                              Content="Fullscreen"/>
+
+                    <CheckBox x:Name="ReadOnlyCheck"
+                              Content="Protect videoconfig.txt"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>

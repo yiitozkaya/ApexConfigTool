@@ -1,0 +1,363 @@
+﻿<UserControl x:Class="ApexConfigTool.Views.AutoexecView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <StackPanel Margin="34">
+
+            <TextBlock Text="Autoexec"
+                       Style="{StaticResource PageTitleStyle}"
+                       Margin="0,0,0,28"/>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,0,0,16">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackPanel>
+
+                        <TextBlock Text="Installation"
+                                   Style="{StaticResource SectionTitleStyle}"/>
+
+                        <TextBlock Text="Launcher"
+                                   Style="{StaticResource MutedTextStyle}"
+                                   Margin="0,15,0,3"/>
+
+                        <TextBlock x:Name="LauncherText"
+                                   Text="Unknown"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock Text="Autoexec"
+                                   Style="{StaticResource MutedTextStyle}"
+                                   Margin="0,15,0,3"/>
+
+                        <TextBlock x:Name="AutoexecStateText"
+                                   Text="Not found"
+                                   FontWeight="SemiBold"/>
+
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Column="1"
+                                Margin="25,0,0,0">
+
+                        <TextBlock Text="Game folder"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <TextBlock x:Name="GamePathText"
+                                   Text="Not detected"
+                                   TextWrapping="Wrap"
+                                   Margin="0,4,0,12"/>
+
+                        <TextBlock Text="Config path"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <TextBlock x:Name="AutoexecPathText"
+                                   Text="Not detected"
+                                   TextWrapping="Wrap"
+                                   Margin="0,4,0,14"/>
+
+                        <Button Content="Open cfg folder"
+                                Width="135"
+                                HorizontalAlignment="Left"
+                                Click="OpenCfgFolderButton_Click"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Border Grid.Column="0"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Field of view"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="FOV"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="FovCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="70" Tag="1.00"/>
+                            <ComboBoxItem Content="90" Tag="1.27"/>
+                            <ComboBoxItem Content="104" Tag="1.485714"/>
+                            <ComboBoxItem Content="110" Tag="1.55"/>
+                            <ComboBoxItem Content="120 · Advanced" Tag="1.70"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="Ability FOV scaling"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="AbilityFovCombo">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Disabled" Tag="1"/>
+                            <ComboBoxItem Content="Default" Tag="0"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                </Border>
+
+
+                <Border Grid.Column="2"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Frame rate"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Game limit"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <TextBox x:Name="FpsCapBox"
+                                 Text="180"
+                                 Margin="0,5,0,14"/>
+
+                        <TextBlock Text="Lobby limit"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <TextBox x:Name="LobbyFpsCapBox"
+                                 Text="60"/>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+
+            <Grid Margin="0,16,0,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Border Grid.Column="0"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Input"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Raw mouse input"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="RawInputCombo"
+                                  Margin="0,5,0,14">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="Mouse acceleration"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="MouseAccelerationCombo">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Disabled" Tag="0"/>
+                            <ComboBoxItem Content="Enabled" Tag="1"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                </Border>
+
+
+                <Border Grid.Column="2"
+                        Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Effects"
+                                   Style="{StaticResource SectionTitleStyle}"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Film grain"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="FilmGrainCombo"
+                                  Margin="0,5,0,12">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="ADS depth of field"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="AdsDofCombo"
+                                  Margin="0,5,0,12">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="Sprint view shake"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="ViewShakeCombo"
+                                  Margin="0,5,0,12">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Minimal" Tag="1"/>
+                            <ComboBoxItem Content="Default" Tag="0"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="Model decals"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="ModelDecalsCombo"
+                                  Margin="0,5,0,12">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Off" Tag="0"/>
+                            <ComboBoxItem Content="On" Tag="1"/>
+
+                        </ComboBox>
+
+                        <TextBlock Text="Cheap water"
+                                   Style="{StaticResource MutedTextStyle}"/>
+
+                        <ComboBox x:Name="CheapWaterCombo">
+
+                            <ComboBoxItem Content="Keep current" Tag="__KEEP__"/>
+                            <ComboBoxItem Content="Optimized" Tag="1"/>
+                            <ComboBoxItem Content="Normal" Tag="0"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,16,0,0">
+
+                <StackPanel>
+
+                    <TextBlock Text="Autoexec file"
+                               Style="{StaticResource SectionTitleStyle}"
+                               Margin="0,0,0,15"/>
+
+                    <WrapPanel>
+
+                        <Button Content="Reload"
+                                Width="90"
+                                Margin="0,0,8,8"
+                                Click="ReloadButton_Click"/>
+
+                        <Button Content="Backup"
+                                Width="90"
+                                Margin="0,0,8,8"
+                                Click="BackupButton_Click"/>
+
+                    </WrapPanel>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,16,0,0">
+
+                <StackPanel>
+
+                    <TextBlock Text="Launch options"
+                               Style="{StaticResource SectionTitleStyle}"
+                               Margin="0,0,0,15"/>
+
+                    <TextBox x:Name="LaunchOptionsBox"
+                             IsReadOnly="True"/>
+
+                    <Button Content="Copy"
+                            Width="90"
+                            HorizontalAlignment="Left"
+                            Margin="0,12,0,0"
+                            Click="CopyLaunchOptionsButton_Click"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <Border Style="{StaticResource CardStyle}"
+                    Margin="0,16,0,0">
+
+                <StackPanel>
+
+                    <TextBlock Text="Raw autoexec"
+                               Style="{StaticResource SectionTitleStyle}"
+                               Margin="0,0,0,15"/>
+
+                    <TextBox x:Name="RawEditor"
+                             Height="320"
+                             AcceptsReturn="True"
+                             AcceptsTab="True"
+                             FontFamily="Cascadia Mono"
+                             FontSize="12.5"
+                             TextWrapping="NoWrap"
+                             VerticalScrollBarVisibility="Auto"
+                             HorizontalScrollBarVisibility="Auto"/>
+
+                    <Button Content="Save raw file"
+                            Width="120"
+                            HorizontalAlignment="Left"
+                            Margin="0,12,0,0"
+                            Click="SaveRawButton_Click"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>
